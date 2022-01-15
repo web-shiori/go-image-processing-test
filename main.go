@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-func main()  {
+func main() {
 	f, err := os.Open("assets/screenshot.png")
 	if err != nil {
 		panic(err)
@@ -37,7 +37,7 @@ func invertImgColor(img image.Image) error {
 		for y := 0; y < h; y++ {
 			imgColor := img.At(x, y)
 			rr, gg, bb, aa := imgColor.RGBA()
-			var max int64 = int64(int(255))
+			var max = int64(255)
 			nr := max - int64(int8(rr))
 			ng := max - int64(int8(gg))
 			nb := max - int64(int8(bb))
